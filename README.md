@@ -8,16 +8,18 @@ in order to install
 1. we recommend using anaconda as the virtual environment ( this step is optional )
 2. clone the repository
 3. creat a virtual environment with python 3.10 `conda create -n maria python=3.10 -y`
-4. install the requirements `pip install -r requirements.txt`
-5. Install LM Studio and download your favorite LLm ( we recommend Mistral 7b, Zephyr Alpha 7b )
-6. Install Open Voice with its Gradio interface ( we recommend using Pinokio. It makes the installation process a lot easier )
+4. activate conda env `conda activate maria`
+5. install the requirements `pip install -r requirements.txt`
+6. Install LM Studio and download your favorite LLm ( we recommend Mistral 7b, Zephyr Alpha 7b )
+7. Install Open Voice with its Gradio interface ( we recommend using Pinokio. It makes the installation process a lot easier )
 
 ## how to run
 
 1. you have to run LM studio and start a server with your favorite LLM.
 2. then you have to start opening the voice
-3. then navigate to the location where you clone the repo and run  `python main.py` in the cmd or the virtual environment you created.
-4. then you can keep talking
+3. activate conda env `conda activate maria`
+4. then navigate to the location where you clone the repo and run  `python main.py` in the cmd or the virtual environment you created.
+5. then you can keep talking
 
 ## customize
 
