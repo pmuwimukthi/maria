@@ -1,0 +1,5 @@
+openai
+SpeechRecognition == 3.10.1
+PyAudio == 0.2.14
+gradio-client == 0.10.0
+simpleaudio == 1.0.4
