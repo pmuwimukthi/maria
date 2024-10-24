@@ -1,7 +1,7 @@
 import time
 import warnings
 from colorama import init, Fore, Style
-from speech_utils2 import listen_for_command, speak
+from speech_utils import listen_for_command, speak
 from ai_utils import initialize_conversation, generate_response
 from memory_utils import update_memory, clear_memory
 from pynput import keyboard
