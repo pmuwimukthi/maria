@@ -1,26 +1,59 @@
-# maria
+# Maria
 
-Maria is an innovative chatbot designed by Udana Wimukthi, founder and CEO of Gapi Dream Company, to provide companionship and support to those who may find themselves alone, including the elderly and individuals without immediate family care. Developed in Python and currently under development, Maria utilizes the LM Studio API for text completion and the Open Voice GradEO client for text-to-speech functionalities. The system is engineered to engage users in seamless conversation, automatically detecting when a user starts or stops talking, transcribing their speech, and replying vocally. Aimed at fostering connection and accessibility, Maria stands out as a compassionate assistant for those in need of company. This program is released under the MIT License, emphasizing its non-commercial use. Maria symbolizes Gapi Dream Company's commitment to leveraging technology for social good, bridging gaps between people and technology with empathy and innovation.
+Maria is an innovative chatbot designed to provide companionship and support, especially for those who may find themselves alone, such as the elderly or individuals without immediate family care. Developed in Python, Maria operates entirely locally, ensuring user privacy. It utilizes the Ollama for text completion and Pyttsx3 for text-to-speech functionalities, engaging users in seamless conversation by transcribing their speech and replying vocally. This program is released under the Apache 2.0 License, emphasizing its commitment to user privacy and open-source collaboration.
 
-## how to install 
+## Features
 
-in order to install 
-1. we recommend using anaconda as the virtual environment ( this step is optional )
-2. clone the repository
-3. creat a virtual environment with python 3.10 `conda create -n maria python=3.10 -y`
-4. activate conda env `conda activate maria`
-5. install the requirements `pip install -r requirements.txt`
-6. Install LM Studio and download your favorite LLm ( we recommend Mistral 7b, Zephyr Alpha 7b )
-7. Install Open Voice with its Gradio interface ( we recommend using Pinokio. It makes the installation process a lot easier )
+- Operates 100% locally to protect user privacy.
+- Engages in natural conversations with text-to-speech capabilities.
+- Recommended LLM: Llama3.1 8B.
 
-## how to run
+## Installation
 
-1. you have to run LM studio and start a server with your favorite LLM.
-2. then you have to start opening the voice
-3. activate conda env `conda activate maria`
-4. then navigate to the location where you clone the repo and run  `python main.py` in the cmd or the virtual environment you created.
-5. then you can keep talking
+1. **Clone the Repository:**
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
+   ```
 
-## customize
+2. **Create a Virtual Environment:**
+   We recommend using Anaconda (optional).
+   ```bash
+   conda create -n maria python=3.12.4 -y
+   conda activate maria
+   ```
 
-you can customize the program by changing the system prompt.
+3. **Install the Requirements:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## How to Run
+
+1. **Activate the Virtual Environment:**
+   ```bash
+   conda activate maria
+   ```
+
+2. **Run the Program:**
+   Navigate to the directory where you cloned the repository and execute:
+   ```bash
+   python main.py
+   ```
+
+3. **Interact with Maria:**
+   - Speak to Maria, and she will respond vocally.
+   - Press `Ctrl+Q` to clear the conversation memory.
+   - Press `Ctrl+C` to stop the program.
+
+## Clearing Memory
+
+To clear the conversation memory during a session, press `Ctrl+Q`. This will reset the conversation, allowing you to start fresh.
+
+## Stopping the Program
+
+To stop the program, press `Ctrl+C` in the terminal where the program is running.
+
+## License
+
+This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for more details.
