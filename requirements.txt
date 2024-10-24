@@ -1,0 +1,13 @@
+colorama
+pynput
+speech_recognition
+whisper
+pyttsx3
+ollama
+edge-tts
+asyncio
+nest_asyncio
+simpleaudio
+
+# Note: 'time', 'warnings', 'os', 'json', and 'threading' are part of Python's standard library,
+# so they don't need to be included in requirements.txt
