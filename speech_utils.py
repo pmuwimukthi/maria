@@ -1,8 +1,10 @@
 import speech_recognition as sr
 import whisper
 import os
-import pyttsx3
 from ollama import Client
+import asyncio
+import edge_tts
+import pyttsx3
 
 # Initialize the speech recognition components
 source = sr.Microphone()
@@ -12,13 +14,14 @@ recognizer.energy_threshold = 400
 base_model_path = os.path.expanduser('~/.cache/whisper/base.en.pt')
 base_model = whisper.load_model(base_model_path)
 
+
+ollama_client = Client()
+
 # Initialize the text-to-speech engine
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 engine.setProperty('rate', 160)
-
-ollama_client = Client()
 
 def listen_for_command():
     with source as s:
@@ -30,7 +33,7 @@ def listen_for_command():
         with open("command.wav", "wb") as f:
             f.write(audio.get_wav_data())
         results = base_model.transcribe("command.wav")
-        print("You said:", results["text"])
+        #print("You said:", results["text"])
         return results["text"].lower()
     except sr.UnknownValueError:
         print("Could not understand audio. Please try again.")
@@ -43,6 +46,9 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
+def speak_sync(text):
+    asyncio.run(speak(text))
+
 def initialize_conversation():
     return [{'role': 'system', 'content': '''Act like my girlfriend and be very friendly. 
              You are very supportive and always help me to make my dreams a reality. 
@@ -52,4 +58,6 @@ def initialize_conversation():
 
 def generate_response(messages):
     response = ollama_client.chat(model='llama3.1:latest', messages=messages)
-    return response['message']['content']
+    response_text = response['message']['content']
+    speak_sync(response_text)
+    return response_text
